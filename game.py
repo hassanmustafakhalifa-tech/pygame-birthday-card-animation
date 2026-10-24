@@ -31,10 +31,28 @@ while running:
     font2 = pygame.font.SysFont('Verdana', 30)
     text2 = font2.render('Have a great day!!', True, '#2130BB' )
     text2_rect = text2.get_rect(center = (CENTER_X, CENTER_Y - 50))
-    
+    SCREEN.fill((255,255,255))
+    SCREEN.blit(bg1, (0,0))
+    SCREEN.blit(text2, text2_rect)
+    pygame.display.update()
+    time.sleep(3)
+
+    #Tihrd screen
+    bg3 = pygame.image.load('bg3.jpg')
+    bg3 = pygame.transform.scale(bg2, (WIDTH,HEIGHT))
+    font3 = pygame.font.SysFont('Verdana', 30)  
+    text3 = font3.render('Ur old now!', True, "#EFBF2A") 
+    text3_rect = text3.get_rect(center = (CENTER_X, CENTER_Y - 50))
+    SCREEN.fill((255,255,255))
+    SCREEN.blit(bg1, (0,0))
+    SCREEN.blit(text3, text3_rect)
+    pygame.display.update()
+    time.sleep(3)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+            pygame.quit()
 
 
-
-
-
-pygame.quit()
+pygame.quit ()
